@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Siteview</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="js/vertx-eventbus.js"></script>
+		<script src="js/siteview.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+  		<style>
+			body { font-family: 'Unica One'; }  
+			td { font-family: 'Unica One'; }
+  		</style>
+	</head>
+	<body style="background: #ffffff;">
+		<div align="center">
+			<div id="chart" style="width: 920px; height: 400px;"></div>
+			<table style="width: 920px; padding: 0px; border-spacing: 4px;">
+				<tr>
+					<td style="width: 230px; vertical-align: top;">
+						<b>Top URIs</b>
+						<br>
+						<div id="uris"></div>
+					</td>
+					<td style="width: 230px; vertical-align: top;">
+						<b>Top Countries</b>
+						<br>
+						<div id="countries"></div>
+					</td>
+					<td style="width: 230px; vertical-align: top;">
+						<b>Top Languages</b>
+						<br>
+						<div id="languages"></div>
+					</td>
+					<td style="width: 230px; vertical-align: top;">
+						<b>Top Devices</b>
+						<br>
+						<div id="operatingSystems"></div>
+					</td>
+					<td style="width: 230px; vertical-align: top;">
+						<b>Top Browsers</b>
+						<br>
+						<div id="browsers"></div>
+					</td>								
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
