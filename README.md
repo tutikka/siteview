@@ -18,7 +18,7 @@ Integration (start to monitor sites) is quite easy. Let's say you start up the a
 On your web site you would add the following `img` tag:
 
 ```
-http://192.168.0.1:9090/img
+<img src="http://192.168.0.1:9090/img"/>
 ```
 
 To monitor the generated feed, you would browse to:
