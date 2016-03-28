@@ -33,19 +33,19 @@ Of course, in a real world scenario, the tracking image route would be published
 
 Use the steps below to install the application.
 
-1. Clone the repository:
+Clone the repository:
 
 ```
 $ git clone https://github.com/tutikka/siteview.git
 ```
 
-2. Change to the cloned repository directory:
+Change to the cloned repository directory:
 
 ```
 $ cd siteview
 ```
 
-3. Build the application:
+Build the application:
 
 ```
 $ ant
@@ -55,13 +55,13 @@ $ ant
 
 Use the steps below to start the application (after building it).
 
-1. Change to the generated `dist` directory:
+Change to the generated `dist` directory:
 
 ```
 $ cd dist
 ```
 
-2. Use the provided `siteview.sh` script to start the application (CTRL-C to stop):
+Use the provided `siteview.sh` script to start the application (CTRL-C to stop):
 
 ```
 $ sh ./siteview.sh
