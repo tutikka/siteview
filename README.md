@@ -67,6 +67,26 @@ Use the provided `siteview.sh` script to start the application (CTRL-C to stop):
 $ sh ./siteview.sh
 ```
 
+## Configuration
+
+To set the port number on which to listen for incoming connections, use the system property:
+
+```
+siteview.port=[NUMBER]
+```
+
+To set the interval on how often to push updates to clients, use the system property:
+
+```
+siteview.interval=[NUMBER]
+```
+
+*Example:*
+
+```
+$ java -Dsiteview.port=9090 -Dsiteview.interval=1000 -cp .:lib/* com/tt/siteview/Server
+```
+
 ## Credits
 
 The real-time hits/second feed seen on the dashboard uses [Highcharts](http://www.highcharts.com).

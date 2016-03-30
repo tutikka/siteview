@@ -62,7 +62,7 @@ public class ServerVerticle extends AbstractVerticle {
 		router.get("/img/*").handler(this::handleImg);
 		
 		httpServer = vertx.createHttpServer();
-		httpServer.requestHandler(router::accept).listen(9090);
+		httpServer.requestHandler(router::accept).listen(Config.port());
 	
 		eventBus = vertx.eventBus();
 		
@@ -73,7 +73,7 @@ public class ServerVerticle extends AbstractVerticle {
 				logger.trace("run");
 				while (true) {
 					try {
-						sleep(1000);
+						sleep(Config.interval());
 						Map<String, Object> obj = new HashMap<String, Object>();
 						obj.put("time", "" + System.currentTimeMillis());
 						obj.put("hits", "" + hits.intValue());
