@@ -1,5 +1,6 @@
 package com.tt.siteview;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -33,15 +34,15 @@ public class ServerVerticle extends AbstractVerticle {
 	
 	private AtomicInteger hits = new AtomicInteger(0);
 	
-	private Map<String, Long> uris = new HashMap<String, Long>();
+	private Map<String, Long> uris = Collections.synchronizedMap(new HashMap<String, Long>());
 	
-	private Map<String, Long> countries = new HashMap<String, Long>();
+	private Map<String, Long> countries = Collections.synchronizedMap(new HashMap<String, Long>());
 	
-	private Map<String, Long> languages = new HashMap<String, Long>();
+	private Map<String, Long> languages = Collections.synchronizedMap(new HashMap<String, Long>());
 	
-	private Map<String, Long> operatingSystems = new HashMap<String, Long>();
+	private Map<String, Long> operatingSystems = Collections.synchronizedMap(new HashMap<String, Long>());
 	
-	private Map<String, Long> browsers = new HashMap<String, Long>();
+	private Map<String, Long> browsers = Collections.synchronizedMap(new HashMap<String, Long>());
 	
 	@Override
 	public void start() throws Exception {
