@@ -24,6 +24,7 @@ public class RandomClient {
 			for (int i = 0; i < 1000; i++) {
 				try {
 					sleep(new Random().nextInt(1000));
+					long start = System.currentTimeMillis();
 					URL url = new URL("http://localhost:9090/img");
 					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 					connection.setDoInput(true);
@@ -35,6 +36,8 @@ public class RandomClient {
 					connection.setRequestProperty("Accept-Language", randomAcceptLanguage());
 					connection.setRequestProperty("User-Agent", randomUserAgent());
 					int status = connection.getResponseCode();
+					long end = System.currentTimeMillis();
+					System.out.println("thread " + getId() + "/" + (i + 1) + " returned status " + status + " in " + (end - start) + " ms");
 					connection.disconnect();
 				} catch (Exception e) {
 					System.err.println(e.getMessage());
@@ -51,7 +54,7 @@ public class RandomClient {
 					"/img/header.png",
 					"/img/footer.png"
 			};
-			return ("http://127.0.0.1:9090" + uris[new Random().nextInt(uris.length)]);
+			return ("http://localhost:9090" + uris[new Random().nextInt(uris.length)]);
 		}
 		
 		private String randomAcceptLanguage() {
@@ -144,7 +147,7 @@ public class RandomClient {
 					"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:45.0) Gecko/20100101 Firefox/45.0",
 					"Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:44.0) Gecko/20100101 Firefox/44.0"
 			};
-			return ("http://127.0.0.1:9090" + userAgents[new Random().nextInt(userAgents.length)]);
+			return (userAgents[new Random().nextInt(userAgents.length)]);
 		}
 		
 	}
